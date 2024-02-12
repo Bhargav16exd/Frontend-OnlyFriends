@@ -24,7 +24,7 @@ function LandingPage(){
                 </div>
                 <div className="w-1/2 h-full  flex justify-center items-start flex-col max-sm:w-full max-sm:items-center  ">
 
-                    <h1 className="font-bold text-5xl my-3  max-sm:text-center">Celebrate this Valentine</h1>
+                    <h1 className="font-bold text-5xl my-3  max-sm:text-center">Celebrate this Valentines</h1>
                      <h2 className="font-medium text-2xl my-3 max-sm:my-6 ">Send Anonymous Letters</h2>
 
                      <div className="flex  w-full my-6 max-sm:items-center max-sm:justify-around ">
@@ -52,7 +52,7 @@ function LandingPage(){
                   <img src={list} alt="" />
             </div>
             <div className=" h-full w-[30%] flex justify-center items-center  max-sm:w-full ">
-             <h2 className="font-medium text-2xl my-3 max- ">People <span className="font-bold">exclusively</span>  from your college</h2>
+             <h2 className="font-medium text-2xl my-3 max-sm:text-center ">People <span className="font-bold">exclusively</span>  from your college</h2>
             </div>
 
         </div>
