@@ -23,7 +23,8 @@ function InitiateLogin(){
     async function sendOTP(e){
 
         e.preventDefault()
-       
+        
+        const emailWithDomain = email.email + "@pccoepune.org";
         const res = await dispatch(verfiyEmail(email.email))
         
         if(res.payload?.statusCode === 200){
