@@ -44,7 +44,9 @@ export const verfiyEmail = createAsyncThunk(
 export const signup = createAsyncThunk(
     '/auth/verifyEmail',
     async function(data){
-        if(!data.email.endsWith("@pccoepune.org")){data.email = data.email + "@pccoepune.org"}
+        if(!data.email.includes("@pccoepune.org")){
+            
+            data.email = data.email + "@pccoepune.org" }
         try {
 
             const res = axiosInstance.post('/user/register',data)
