@@ -150,7 +150,7 @@ function SignupPage(){
                             <select id="dropdown1" className="w-full bg-transparent focus:outline-none" name="branch" onChange={handleInput} value={data.branch} >
                                 <option value="" className="">Choose Your Branch</option>
                                 <option value="Computer Science" className="my-10">Computer Science</option>
-                                <option value="Mechanica" >Mechanical</option>
+                                <option value="Mechanical" >Mechanical</option>
                                 <option value="ENTC" >ENTC</option>
                                 <option value="AIML" >AIML</option>
                                 <option value="CIVIL" >CIVIL</option>
