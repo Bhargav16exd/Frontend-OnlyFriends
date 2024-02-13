@@ -43,11 +43,11 @@ function InitiateLogin(){
                    <div className=" h-1/6 flex justify-center items-center"> 
                      <h1 className="font-extrabold text-2xl"> Sign Up</h1> 
                    </div>
-                   <div className=" h-2/6 py-2 px-8 my-4 flex flex-col items-start">
+                   <div className=" h-2/6 py-2 px-8 my-2 flex flex-col items-start">
                      
                      <h1 className="font-semibold text-lg">Email ID:</h1>
 
-                      <div className=" mt-6 text-xs font-bold flex flex-row justify-center items-center "> 
+                      <div className=" mt-4 text-xs font-bold flex flex-row justify-center items-center "> 
                       
                       <input 
                       type="email" 
@@ -61,11 +61,13 @@ function InitiateLogin(){
 
                       <div className="border border-black w-44 opacity-40"></div>
                     </div> 
-                    <div className=" h-1/6 text-xs px-10 font-bold flex justify-center items-center " >
-                         <p className="text-center">This email is not shared with anyone but we require to confirm your identity</p>
+                    <div className=" h-1/6 text-xs px-10 font-bold flex flex-col justify-center items-center " >
+                        <p className="text-center my-4">Kindy Dont Enter @pcccoepune.org in the email</p>
+                         <p className="text-center mb-16">This email is not shared with anyone but we require to confirm your identity</p>
                     </div>
+                    
                     <div className="flex justify-center items-center" >
-                        <p className="pb-2">
+                        <p className="text-sm pb-2">
                         Already have an account ? 
                         <Link to={'/login'} className="link text-blue-500"> Login </Link>
                       </p>
