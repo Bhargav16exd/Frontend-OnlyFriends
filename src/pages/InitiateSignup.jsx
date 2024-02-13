@@ -23,9 +23,8 @@ function InitiateLogin(){
     async function sendOTP(e){
 
         e.preventDefault()
-
        
-        const res = await dispatch(verfiyEmail(emailWithDomain))
+        const res = await dispatch(verfiyEmail(email.email))
         
         if(res.payload?.statusCode === 200){
             navigate('/signup')
