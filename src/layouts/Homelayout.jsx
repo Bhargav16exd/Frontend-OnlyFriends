@@ -99,8 +99,8 @@ function Homelayout({ children }) {
                 
                 <div className="bg-white opacity-90 h-full w-1/3 mx-2 rounded-xl flex flex-col justify-center items-center py-2 px-4 cursor-pointer" onClick={handle}>
                   
-                  <img src={user.avatar} className="rounded-full z-100 opacity-100 h-1/2 mb-2" />
-                  <p className="text-base "> My Profile</p>
+                  <img src={user.avatar} className="rounded-full z-100 opacity-100 h-1/2 mb-2 " />
+                  <p className="text-base text-center"> My Profile</p>
                   
                 </div>
                 

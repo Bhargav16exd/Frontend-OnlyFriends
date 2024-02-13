@@ -65,7 +65,7 @@ function SignupPage(){
           
           <div className=" h-[700px] w-[600px] shadow-[0_0_10px_-4px_rgba(0,0,0,0.3)]  bg-white rounded-xl py-10 px-10  
           max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-start max-sm:px-15 max-sm:rounded-xl 
-          max-sm:pt-10 max-sm:border max-sm:h-fit max-sm:w-[90%] 
+          max-sm:pt-10 max-sm:h-fit max-sm:w-[90%] 
           ">        
                      
                    
@@ -107,7 +107,7 @@ function SignupPage(){
                    <div className="  my-4 flex flex-col justify-center items-start pl-10 max-sm:pl-0 max-sm:w-fit max-sm:border ">
                      <div className="text-sm  flex flex-row justify-center items-center  max-sm:flex-col max-sm:w-64 max-sm:items-start"> 
                         <p className="mr-5 max-sm:mr-0 max-sm:my-2">Email ID :</p>
-                        <div className="max-sm:flex max-sm:border max-sm:justify-center max-sm:items-center"> 
+                        <div className="max-sm:flex  max-sm:justify-center max-sm:items-center"> 
                         <input 
                         type="email" 
                         name="email" 
