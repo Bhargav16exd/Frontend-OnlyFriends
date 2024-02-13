@@ -62,7 +62,7 @@ function InitiateLogin(){
                       <div className="border border-black w-44 opacity-40"></div>
                     </div> 
                     <div className=" h-1/6 text-xs px-10 font-bold flex flex-col justify-center items-center " >
-                        <p className="text-center my-4">Kindy Dont Enter @pcccoepune.org in the email</p>
+                        <p className="text-center my-4">Kindy dont enter @pcccoepune.org in the email</p>
                          <p className="text-center mb-16">This email is not shared with anyone but we require to confirm your identity</p>
                     </div>
                     
