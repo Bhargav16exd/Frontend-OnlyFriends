@@ -104,7 +104,7 @@ function SignupPage(){
                    </div> 
 
                     {/* email */}
-                   <div className="  my-4 flex flex-col justify-center items-start pl-10 max-sm:pl-0 max-sm:w-fit max-sm:border ">
+                   <div className="  my-4 flex flex-col justify-center items-start pl-10 max-sm:pl-0 max-sm:w-fit  ">
                      <div className="text-sm  flex flex-row justify-center items-center  max-sm:flex-col max-sm:w-64 max-sm:items-start"> 
                         <p className="mr-5 max-sm:mr-0 max-sm:my-2">Email ID :</p>
                         <div className="max-sm:flex  max-sm:justify-center max-sm:items-center"> 
