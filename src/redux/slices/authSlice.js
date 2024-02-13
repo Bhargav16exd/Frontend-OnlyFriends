@@ -4,7 +4,8 @@ import toast from "react-hot-toast";
 
 const initialState = {
     authData:{
-        data: localStorage.getItem('data') || {},
+        data: JSON.parse(localStorage.getItem("data")) || {} ,
+        cookie: localStorage.getItem('cookie') || "",
         isLoggedIn : localStorage.getItem('isLoggedIn') || false,
     },
     data:{}
@@ -44,9 +45,7 @@ export const verfiyEmail = createAsyncThunk(
 export const signup = createAsyncThunk(
     '/auth/verifyEmail',
     async function(data){
-        if(!data.email.endsWith("@pccoepune.org")){
-            
-            data.email = data.email + "@pccoepune.org" }
+        if(!data.email.includes("@pccoepune.org")){data.email = data.email + "@pccoepune.org"}
         try {
 
             const res = axiosInstance.post('/user/register',data)
@@ -87,6 +86,7 @@ export const logout = createAsyncThunk(
     "/auth/logout",
     async function(){
         try {
+            console.log(initialState.authData)
             const res = axiosInstance.post("/user/logout/")
             toast.promise(res,{
                 loading:"Logging out of account",
@@ -112,7 +112,8 @@ const authSlice = createSlice({
     extraReducers: (builder)=>{
         builder
         .addCase(loginAcc.fulfilled,(state,action)=>{
-            localStorage.setItem("data",JSON.stringify(action?.payload?.data))         
+            localStorage.setItem("data",JSON.stringify(action?.payload?.data))
+            localStorage.setItem("cookie",action?.payload?.data?.accessToken)         
             localStorage.setItem("isLoggedIn",true)
             state.authData.data = action?.payload?.data?.loggedInUserDetails
             state.authData.isLoggedIn = true
