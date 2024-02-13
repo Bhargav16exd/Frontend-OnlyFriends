@@ -25,7 +25,7 @@ function InitiateLogin(){
         e.preventDefault()
         
         const emailWithDomain = email.email + "@pccoepune.org";
-        const res = await dispatch(verfiyEmail(email.email))
+        const res = await dispatch(verfiyEmail(emailWithDomain))
         
         if(res.payload?.statusCode === 200){
             navigate('/signup')
