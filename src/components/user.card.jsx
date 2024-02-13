@@ -10,7 +10,7 @@ function UserCard({name ,avatar , year , branch,id}){
        
    
                 
-                    <h1 className="text-base font-medium my-2 ">{name}</h1>
+                    <h1 className="text-base font-medium my-2 max-sm:text-center ">{name}</h1>
                     <h1 className="text-xs   ">{year}</h1>
                     <h1 className="text-xs  mb-4">{branch}</h1>
 
