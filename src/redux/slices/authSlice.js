@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 const initialState = {
     authData:{
-        data: JSON.parse(localStorage.getItem('data')) || {},
+        data: localStorage.getItem('data') || {},
         isLoggedIn : localStorage.getItem('isLoggedIn') || false,
     },
     data:{}
