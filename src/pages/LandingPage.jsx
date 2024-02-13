@@ -1,89 +1,89 @@
-import img from "../assets/cp.png"
-import list from "../assets/list.png"
-import lett from "../assets/lett.png"
-import f from "../assets/f.png"
-import { Link } from "react-router-dom"
-import heart from "../assets/heart.png"
-import logo from "../assets/logp.png"
+import { useState } from "react";
+import {useDispatch} from "react-redux";
+import { verfiyEmail } from "../redux/slices/authSlice";
+import { Link, useNavigate } from "react-router-dom";
 
+function InitiateLogin(){
 
-function LandingPage(){
+    const [email,setEmail] = useState({
+        email:""
+    })
 
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    function handleInput(e){
+        const {name,value} = e.target
+        setEmail({
+            ...email,
+            [name]:value
+        })
+    }
+
+    async function sendOTP(e){
+
+        e.preventDefault()
+        const emailWithDomain = email.email + "@pccoepune.org";
+        const res = await dispatch(verfiyEmail(emailWithDomain))
+        
+        if(res.payload?.statusCode === 200){
+            navigate('/signup')
+            
+        }
+    }
 
     return(
-        <>
-        <div className="h-[100vh] w-[100vw] ">
-
-            <div className=" h-[15%] flex justify-start items-center ">
-               <img src={logo} alt=""className="h-36 ml-8 max-sm:ml-5" />
-            </div>
-            <div className=" h-[85%] w-full flex max-sm:flex-col ">
-
-                <div className="w-1/2 h-full  flex justify-center items-center max-sm:w-full ">
-                   <img src={img} className="h-[60%] w-[50%] mb-10 max-sm:h-[80%] max-sm:w-[80%]" />
-                </div>
-                <div className="w-1/2 h-full  flex justify-center items-start flex-col max-sm:w-full max-sm:items-center  ">
-
-                    <h1 className="font-bold text-5xl my-3  max-sm:text-center">Celebrate this Valentines</h1>
-                     <h2 className="font-medium text-2xl my-3 max-sm:my-6 ">Send Anonymous Letters</h2>
-
-                     <div className="flex  w-full my-6 max-sm:items-center max-sm:justify-around ">
-
-                     <Link to={'/initiateLogin'}>
-                     <button className="my-2 text-sm bg-black text-white  w-32 h-10 flex items-center justify-center  " >
-                          Register
-                        </button>
-                        </Link>
-                        <Link to="/login">
-                        <button className="my-2 text-sm bg-black text-white  w-32 h-10 flex items-center justify-center ml-20 max-sm:ml-0 " >
-                          Login
-                        </button>
-                        </Link>
-                     </div>
-
-                </div>
-
-            </div>
-
-        </div>
-        <div className="h-[100vh] w-[100vw]  flex max-sm:flex-col max-sm:h-[60vh] max-sm:my-16" >
-
-            <div className=" h-full w-[60%] flex justify-center items-center px-10 max-sm:w-full ">
-                  <img src={list} alt="" />
-            </div>
-            <div className=" h-full w-[30%] flex justify-center items-center  max-sm:w-full ">
-             <h2 className="font-medium text-2xl my-3 max-sm:text-center ">People <span className="font-bold">exclusively</span>  from your college</h2>
-            </div>
-
-        </div>
-        <div className="h-[100vh] w-[100vw]  flex max-sm:flex-col-reverse max-sm:h-[50vh] max-sm:mb-8 ">
-            
-            <div className=" h-full w-[40%] flex justify-center items-center  max-sm:w-full ">
-             <h2 className="font-medium text-2xl my-3 text-center  ">Letters sent are completely <span className="font-bold">anonymous</span> and <span className="font-bold">encrypted</span></h2>
-            </div>
-            <div className=" h-full w-[60%] flex justify-center items-center px-10 py-10 max-sm:w-full ">
-                  <img src={lett} className="h-[90%]" />
-            </div>
-        </div>
-        <div className="h-[70vh] w-[100vw]  flex max-sm:flex-col ">
         
-            <div className=" h-full w-[30%] flex justify-center items-center  max-sm:w-full ">
-                  <img src={f} className="h-[70%]" />
-            </div>
-            <div className=" h-full w-[70%] flex justify-center items-center px-10 py-10 max-sm:w-full ">
-                   <h2 className="font-medium text-2xl my-3 max-sm:flex  max-sm:flex-col max-sm:justify-center max-sm:items-center "><span > Receive <span className=" font-bold">  secret </span>  </span>letters from others</h2>
-            </div>
-        </div>
-        <div className="h-[20vh] w-[100vw]  flex max-sm:flex-col ">
-            
-            <div className=" h-full w-full flex justify-center items-center  max-sm:w-full ">
-            <h2 className="font-medium text-xl my-3 flex "> Made with <img src={heart} alt="" className="h-8 w-8 mx-3" /> in PCCOE </h2>
-            </div>
-            
-        </div>
+        <form onSubmit={sendOTP} noValidate>
+        <div className="h-[100vh] w-[100vw] bg-[#E8E4DD]"> 
+         
+         <div className="h-[100vh] w-[100vw] bg-[#E8E4DD] flex justify-center items-center">
+           <div className="shadow-[0_0_10px_-4px_rgba(0,0,0,0.3)] h-[400px] w-[350px] bg-white rounded-xl">
 
-        </>
+                   <div className=" h-1/6 flex justify-center items-center"> 
+                     <h1 className="font-extrabold text-2xl"> Sign Up</h1> 
+                   </div>
+                   <div className=" h-2/6 py-2 px-8 my-2 flex flex-col items-start">
+                     
+                     <h1 className="font-semibold text-lg">Email ID:</h1>
+
+                      <div className=" mt-4 text-xs font-bold flex flex-row justify-center items-center "> 
+                      
+                      <input 
+                      type="email" 
+                      name="email" 
+                      className="focus:outline-none py-2 w-48 " 
+                      placeholder="Enter Your Email"
+                      onChange={handleInput}
+                      value={email.email}
+                      />
+                      <span className="">@pccoepune.org</span>  </div>
+
+                      <div className="border border-black w-44 opacity-40"></div>
+                    </div> 
+                    <div className=" h-1/6 text-xs px-10 font-bold flex flex-col justify-center items-center " >
+                        <p className="text-center my-4">Kindy Dont Enter @pcccoepune.org in the email</p>
+                         <p className="text-center mb-16">This email is not shared with anyone but we require to confirm your identity</p>
+                    </div>
+                    
+                    <div className="flex justify-center items-center" >
+                        <p className="text-sm pb-2">
+                        Already have an account ? 
+                        <Link to={'/login'} className="link text-blue-500"> Login </Link>
+                      </p>
+                    </div>
+                    <div className=" h-1/6  flex justify-center items-center" >
+                        <button className="my-2 text-sm bg-black text-white rounded-3xl w-24 h-8 flex items-center justify-center " >
+                          Send OTP
+                        </button>
+                    </div>
+                    
+
+           </div>
+          </div>
+
+        </div></form>
     )
 }
 
-export default LandingPage;
+export default InitiateLogin;
