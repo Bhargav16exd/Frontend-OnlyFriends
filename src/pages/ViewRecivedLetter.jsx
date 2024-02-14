@@ -28,9 +28,9 @@ function ViewRecievdLetterPage(){
     return(
         
      
-        <div className="h-fit w-screen flex justify-center items-center max-sm:flex-col my-4 ">
+        <div className="h-screen w-screen flex justify-center items-center max-sm:flex-col ">
               
-               <div className=" h-[90vh] w-[35%] rounded-3xl bg-white shadow-[0_0_25px_-13px_rgba(0,0,0,0.3)] max-sm:w-[90%] max-sm:h-[60%]">
+               <div className=" h-[95%] w-[35%] rounded-3xl bg-white shadow-[0_0_25px_-13px_rgba(0,0,0,0.3)] max-sm:w-[90%] max-sm:h-[60%]">
                         
                          <div className="min-h-[70%] py-4 px-6 font-mono  flex justify-center items-center ">
                                 
@@ -39,10 +39,10 @@ function ViewRecievdLetterPage(){
                                 </div>
                                
                          </div>
-                         <div className="h-[30vh] border max-sm:h-[20vh]">
+                         <div className="h-[30%] ">
 
                             <div className="h-full w-full flex justify-end items-center ">
-                                <img src={stamp}  className="max-h-[40%] mr-16 m"/>
+                                <img src={stamp}  className="h-[40%] mr-16"/>
                             </div>
 
 
@@ -54,7 +54,7 @@ function ViewRecievdLetterPage(){
             
 
                <Link to={'/discover'}> 
-               <button  className="my-2 text-sm bg-black text-white rounded-xl w-24 h-8 flex items-center justify-center absolute left-5 top-5 max-sm:relative max-sm:mb-10  max-sm:left-0 " >
+               <button  className="my-2 text-sm bg-black text-white rounded-xl w-24 h-8 flex items-center justify-center absolute left-5 top-5 max-sm:relative  max-sm:left-0 " >
                  Back
                 </button>
                 </Link> 
