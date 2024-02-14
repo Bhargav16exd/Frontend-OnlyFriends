@@ -67,7 +67,7 @@ function ViewSentLetterPage(){
                             <div className="min-h-[10vh] py-4 px-6 font-mono  flex justify-center items-center ">
                                 
                                 <div className="h-full w-full text-xs flex justify-center items-center px-4">
-                                 {letterContent.comment}
+                                 {letterData.comment}
                                 </div>
                             </div> :
                             <>
