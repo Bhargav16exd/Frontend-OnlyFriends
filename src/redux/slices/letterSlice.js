@@ -47,7 +47,6 @@ export const getSentLetter = createAsyncThunk(
 export const getsingleLetter = createAsyncThunk(
     'letter/getSingleLetter',
     async function (id){
-        console.log(id)
         try {
             const res = axiosInstance.get(`/letter/view-sent-letter/${id}`)
             toast.promise(res,{

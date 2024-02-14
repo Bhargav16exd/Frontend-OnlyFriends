@@ -16,7 +16,7 @@ function ViewRecievdLetterPage(){
 
     const [response, setResponse] = useState("")
 
-    console.log(letterContent)
+   
 
     const handleInput = (e)=>{
         const {name, value} = e.target;

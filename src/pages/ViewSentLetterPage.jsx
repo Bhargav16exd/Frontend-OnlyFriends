@@ -13,8 +13,6 @@ function ViewSentLetterPage(){
     const {id} = useParams()
     const letterData = useSelector(state=>state.letter.singleSentLetterData)
 
-    console.log(letterData)
-
    
 
     async function getLetter(){
