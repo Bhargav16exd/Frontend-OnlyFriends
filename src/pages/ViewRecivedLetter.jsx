@@ -65,7 +65,7 @@ function ViewRecievdLetterPage(){
                                 </div>
                                
                          </div>
-                         <div className="h-[30vh] border max-sm:h-[20vh]">
+                         <div className="h-[30vh] max-sm:h-[20vh]">
 
                             <div className="h-full w-full flex justify-end items-center ">
                                 <img src={stamp}  className="max-h-[40%] mr-16 m"/>
