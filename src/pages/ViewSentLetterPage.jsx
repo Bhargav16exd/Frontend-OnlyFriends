@@ -13,6 +13,8 @@ function ViewSentLetterPage(){
     const {id} = useParams()
     const letterData = useSelector(state=>state.letter.singleSentLetterData)
 
+    console.log(letterData)
+
    
 
     async function getLetter(){
@@ -28,9 +30,9 @@ function ViewSentLetterPage(){
     return(
         
      
-        <div className="h-fit w-screen flex justify-center items-center py-4 max-sm:flex-col">
+        <div className="h-screen w-screen flex flex-col justify-center items-center max-sm:flex-col">
               
-               <div className="min-h-[90vh] w-[35%] rounded-3xl bg-white shadow-[0_0_25px_-13px_rgba(0,0,0,0.3)] max-sm:w-[90%]">
+               <div className=" h-[95%] w-[35%] rounded-3xl bg-white shadow-[0_0_25px_-13px_rgba(0,0,0,0.3)] max-sm:w-[90%]">
                          <div className="h-[22%] flex">
                             <div className="h-full w-3/4 px-8 py-10">
                                 
@@ -55,6 +57,36 @@ function ViewSentLetterPage(){
                                
                          </div>
 
+                        
+               </div>
+
+               <div className="my-10 min-h-[10vh] w-[35%] rounded-3xl bg-white shadow-[0_0_25px_-13px_rgba(0,0,0,0.3)] max-sm:w-[90%] ">
+                        
+                        {
+                           letterData.comment ? 
+                            <div className="min-h-[10vh] py-4 px-6 font-mono  flex justify-center items-center ">
+                                
+                                <div className="h-full w-full text-xs flex justify-center items-center px-4">
+                                 {letterContent.comment}
+                                </div>
+                            </div> :
+                            <>
+                            <div className="min-h-[10vh] py-4 px-6 font-mono  flex justify-center items-center ">
+                                
+                                <div className="h-full w-full text-xs flex justify-center items-center px-4">
+                                    No Reply Yet
+                                </div>
+                            </div>
+                            
+
+                          
+                         </>
+                            
+                        }
+
+                         
+                        
+                    
                         
                </div>
             

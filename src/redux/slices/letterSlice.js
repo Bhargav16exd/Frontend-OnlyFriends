@@ -6,7 +6,7 @@ const initialState = {
     letterData:[],
     singleSentLetterData:{},
     recievedLetterData:[],
-    content:""
+    content:{}
 }
 
 
@@ -82,6 +82,22 @@ export const recievedSingleLetterAPI = createAsyncThunk(
         
         try {
             const res = axiosInstance.get(`/letter/view-recieved-letter/${id}`)
+            toast.promise(res,{
+                loading: '',
+            },{position:"bottom-right"})
+            return (await res).data
+        } catch (error) {
+            toast.error(error.response.data.message)
+        }
+    }
+)
+
+export const addReply = createAsyncThunk(
+    'letter/add-comment',
+    async function (data){
+        
+        try {
+            const res = axiosInstance.post(`/letter/add-comment/${data.id}`, data)
             toast.promise(res,{
                 loading: '',
             },{position:"bottom-right"})
