@@ -28,11 +28,11 @@ function ViewRecievdLetterPage(){
     return(
         
      
-        <div className="h-fit w-screen flex justify-center items-center max-sm:flex-col my-4 ">
+        <div className="min-h-screen w-screen flex justify-center items-center max-sm:flex-col my-4 ">
               
-               <div className="min-h-[90vh] w-[35%] rounded-3xl bg-white shadow-[0_0_25px_-13px_rgba(0,0,0,0.3)] max-sm:w-[90%] max-sm:h-[60%]">
+               <div className="min-h-[50vh] w-[35%] rounded-3xl bg-white shadow-[0_0_25px_-13px_rgba(0,0,0,0.3)] max-sm:w-[90%] ">
                         
-                         <div className="min-h-[70vh] py-4 px-6 font-mono  flex justify-center items-center ">
+                         <div className="min-h-[50vh] py-4 px-6 font-mono  flex justify-center items-center ">
                                 
                                 <div className="h-full w-full text-xs flex justify-center items-center px-4">
                                  {data}
