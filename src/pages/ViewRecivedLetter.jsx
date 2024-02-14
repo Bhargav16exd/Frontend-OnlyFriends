@@ -14,6 +14,8 @@ function ViewRecievdLetterPage(){
         commentByRecipient:""
     })
 
+    const [response, setResponse] = useState("")
+
     console.log(letterContent)
 
     const handleInput = (e)=>{
@@ -30,6 +32,8 @@ function ViewRecievdLetterPage(){
             comment:data.commentByRecipient
         }
         const res = await dispatch(addReply(omg))
+        setResponse(res)
+
 
         if(res.payload?.statusCode === 200){
             navigate(`/view-recieved-letter/${id}`)
@@ -45,7 +49,7 @@ function ViewRecievdLetterPage(){
 
     useEffect(()=>{
         getLetter()
-    },[])
+    },[response])
 
     return(
         
@@ -61,7 +65,7 @@ function ViewRecievdLetterPage(){
                                 </div>
                                
                          </div>
-                         <div className="h-[30vh] max-sm:h-[20vh]">
+                         <div className="h-[30vh] border max-sm:h-[20vh]">
 
                             <div className="h-full w-full flex justify-end items-center ">
                                 <img src={stamp}  className="max-h-[40%] mr-16 m"/>
