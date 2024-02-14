@@ -28,9 +28,9 @@ function ViewSentLetterPage(){
     return(
         
      
-        <div className="h-screen w-screen flex justify-center items-center max-sm:flex-col">
+        <div className="h-fit w-screen flex justify-center items-center py-4 max-sm:flex-col">
               
-               <div className=" h-[95%] w-[35%] rounded-3xl bg-white shadow-[0_0_25px_-13px_rgba(0,0,0,0.3)] max-sm:w-[90%]">
+               <div className="min-h-[90vh] w-[35%] rounded-3xl bg-white shadow-[0_0_25px_-13px_rgba(0,0,0,0.3)] max-sm:w-[90%]">
                          <div className="h-[22%] flex">
                             <div className="h-full w-3/4 px-8 py-10">
                                 
