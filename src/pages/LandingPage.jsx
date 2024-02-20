@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import bgDesktop from '../assets/Frame 5.png';
-import bgMobile from '../assets/abc.png';
+import bgMobile from '../assets/ab.png';
 
 
 function LandingPage() {
